@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'page2',
+    loadChildren: () => import('./page2/page2.module').then( m => m.Page2Module)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'

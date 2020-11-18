@@ -14,7 +14,24 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <!-- <strong>Ready to create an app?123</strong>
+    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p> -->
+    <!-- <h2>{{hero.name}}</h2>
+    <div><label for="">id: </label>{{hero.id}}</div> -->
+    
+    <ion-button color="danger" [routerLink]="['/page2']">Page 2</ion-button>
+    <div *ngIf="selectedHero" class="selected-box">
+      <label for="">{{selectedHero.id}}</label>
+      <input [(ngModel)]="selectedHero.name" placeholder="name" type="text"/>
+    </div>
+    <ul class="heroes">
+      <li *ngFor="let hero of heroes" (click)="selectHero(hero)" [class.selected]="selectedHero === hero">
+        <span class="badge">{{hero.name}}</span>
+      </li>
+    </ul>
+    <!-- <div>
+      <label for="">name: </label>
+      <input [(ngModel)]="hero.name" placeholder="name" type="text"/>
+    </div> -->
   </div>
 </ion-content>
